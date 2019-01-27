@@ -20,6 +20,7 @@
                   <h1 class="display-4">Simple MVC v1.0.0</h1>
                     <p class="card-text">It's super simple PHP MVC Framework</p>  
                     <p class="card-text">Author: Md. Shahriar Hosen</p>
+                    <p class="card-text">Email: cse.shahriar.hosen@gmail.com</p>
 
                     <a href="https://github.com/cseshahriar/simple-mvc" class="btn btn-primary">Github</a>
                 </div>
