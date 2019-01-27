@@ -10,7 +10,7 @@ define('DB_NAME', 'mvc');
 define('APPROOT' ,dirname(dirname(__FILE__)));  
 
 // URL Root 
-define('ROOTURL', 'http://simplemvc.com/');    
+define('ROOTURL', 'http://simplemvc.com');    
 
 // Site Name
 define('SITENAME', 'Simple MVC'); 

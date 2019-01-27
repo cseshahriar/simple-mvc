@@ -1,5 +1,5 @@
 <?php
-require_once '../config/config.php';    
+require_once './config/config.php';    
 /**
  * Database Class
  * Author: <cse.shahriar.hosen@gmail.com> 

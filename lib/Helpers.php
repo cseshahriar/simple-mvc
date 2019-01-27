@@ -4,7 +4,7 @@
 session_start(); 
 
 // App Info 
-require_once '../config/config.php';   
+require_once './config/config.php';    
 
 /**
  * [flash message]
