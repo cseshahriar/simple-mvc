@@ -1,0 +1,8 @@
+# Rewrite(convert) the url before processing
+RewriteEngine on
+
+# Do not redirect if 
+RewriteCond $1 !^(index\.php|assets|css|js|img|uploads|favicon.png)
+
+# redirect to => ./index.php?url=$1
+RewriteRule ^(.*) index.php?route=$1 [QSA]  
