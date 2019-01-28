@@ -35,6 +35,17 @@ class Controller
 	}
 
 	/**
+	 * [isLoggedInUser description]
+	 * @return boolean [description]
+	 */
+	public function isLoggedInUser()
+	{
+		if (!isset($_SESSION['user_id'])) {     
+			header("Location: /user/login");       
+		} 
+	}
+
+	/**
 	 * [redirect description] 
 	 * @param  [type] $route [description]
 	 * @return [type]        [description]

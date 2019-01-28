@@ -83,18 +83,17 @@
   <!-- /.control-sidebar -->
   <!-- Add the sidebar's background. This div must be placed
   immediately after the control sidebar -->
-  <div class="control-sidebar-bg"></div>
+  <div class="control-sidebar-bg"></div> 
 </div>
 <!-- ./wrapper -->
 
 <!-- REQUIRED JS SCRIPTS -->
 
 <!-- jQuery 3 -->
-<script src="<?= asset('js/jquery-3.3.1.slim.min.js') ?>"></script>  
+<script src="<?= asset('adminlte/bower_components/jquery/dist/jquery.min.js') ?>"></script>
 <!-- Bootstrap 3.3.7 -->
-<script src="<?= asset('js/popper.min.js') ?>"></script>
-<script src="<?= asset('js/bootstrap.min.js') ?>"></script>
+<script src="<?= asset('adminlte/bower_components/bootstrap/dist/js/bootstrap.min.js') ?>"></script>
 <!-- AdminLTE App -->
-<script src="<?= asset('js/adminlte.min.js') ?>"></script>  
-</body>  
-</html>
+<script src="<?= asset('adminlte/dist/js/adminlte.min.js') ?>"></script>  
+</body>
+</html> 

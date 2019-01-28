@@ -27,7 +27,7 @@ class UsersController  extends Controller
 		$data = [
 			'title' => 'Dashboard'
 		];
-		$this->view('backend/dashboard', $data);   
+		$this->view('backend/dashboard', $data);      
 	}
 
 	/**
@@ -52,7 +52,7 @@ class UsersController  extends Controller
 	public function register() 
 	{
 		if (!isLoggedIn()) {     
-			header("Location: /users/login");     
+			header("Location: /user/login");      
 		}  
 
 		// Check for POST
@@ -150,7 +150,7 @@ class UsersController  extends Controller
 	public function update()
 	{
 		if (!isLoggedIn()) {    
-			header("Location: /users/login");     
+			header("Location: /user/login");      
 		} 
 	}
 

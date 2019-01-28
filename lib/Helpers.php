@@ -1,5 +1,4 @@
 <?php 
-
 // Helpers Functions
 session_start(); 
 

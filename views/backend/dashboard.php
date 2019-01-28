@@ -1,4 +1,5 @@
-<?php require_once 'inc/header.php'; ?>  
+<!-- header -->
+<?php include_once 'inc/header.php'; ?>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -21,10 +22,10 @@
         | Your Page Content Here |
         -------------------------->
 
-    </section>
+    </section> 
     <!-- /.content -->
-  </div>
+  </div> 
   <!-- /.content-wrapper -->
 
-<?php require_once 'inc/footer.php'; ?>   
-  
+  <!-- footer -->
+  <?php include_once 'inc/footer.php'; ?> 
