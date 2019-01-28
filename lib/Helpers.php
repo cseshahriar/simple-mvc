@@ -46,7 +46,7 @@ function isLoggedIn()
 }   
 
 // Simple page redirect
-function redirect($page)
+function redirect($route)  
 {
-	header("Location: ".URLROOT.'/'.$page); 
+	header("Location: ".ROOTURL.'/'.$route);  
 } 

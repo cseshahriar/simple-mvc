@@ -16,22 +16,22 @@ class UsersController  extends Controller
 
 	public function index()
 	{ 
-		/* if (!isLoggedIn()) {    
+		if (!isLoggedIn()) {    
 			header("Location: /user/login");     
-		} */ 
+		}   
 
-		$users = $this->userModel->users();  
+		$users = $this->userModel->users();   
 		$data = [
 			'users' => $users
 		];  
 		$this->view('backend/users/index', $data);         
-	}
+	} 
 
 	public function register() 
 	{
-		/* if (!isLoggedIn()) {     
+		if (!isLoggedIn()) {     
 			header("Location: /users/login");     
-		} */
+		}  
 
 		// Check for POST
 		if ($_SERVER['REQUEST_METHOD'] == 'POST') { 
@@ -137,6 +137,10 @@ class UsersController  extends Controller
 		} 
 	}
 
+	/**
+ 	* [login description]
+ 	* @return [type] [description]
+ 	*/
 	public function login() 
 	{
 		// Check for POST
@@ -182,18 +186,18 @@ class UsersController  extends Controller
 				// validated 
 				// check and set logged in user
 				$loggedInUser = $this->userModel->login($data['email'], $data['password']); 
-				if ($loggedInUser) {
+				if ($loggedInUser) { 
 					
 					// create session
-					$this->createUserSession($loggedInUser);
+					$this->createUserSession($loggedInUser); 
 
 				} else {
 					$data['password_error'] = 'Incorrect password!';
-					$this->view('/users/login', $data);  
+					$this->view('backend/users/login', $data);    
 				}
 			} else {
 				// load view with errors 
-				$this->view('/users/login', $data);    
+				$this->view('backend/users/login', $data);     
 			}
 
 		} else { 
@@ -206,7 +210,7 @@ class UsersController  extends Controller
 			];
 
 			// load view 
-			$this->view('users/login', $data);    
+			$this->view('backend/users/login', $data);       
 		}
 	}
 
@@ -223,12 +227,16 @@ class UsersController  extends Controller
 		$_SESSION['user_email'] = $user->email;
 
 		flash('login_success', 'Welcome, you are successfuly logged in.');   
-		redirect('user/index');                  
+		$this->redirect('user/index');                     
 	}
 
 
-	public function logout()    
+	public function logout()     
 	{
+		if (!isLoggedIn()) {    
+			header("Location: /user/login");      
+		}
+
 		$data = [
 			'email' => '',
 			'password' => ''        
@@ -240,7 +248,7 @@ class UsersController  extends Controller
 		session_destroy();
 
 		flash('logout_success', 'You are now logged out.');
-		redirect('user/login');         
+		$this->redirect('user/login');               
 	} 
 
 	public function isLoggedIn() 

@@ -4,8 +4,7 @@
  * Author: Md. Shahriar Hosen <cse.shahriar.hosen@gmail.com>
  */
 class Controller
-{
-
+{	
 	/**
 	 * @param  [model file]
 	 * @return [object]
@@ -34,5 +33,15 @@ class Controller
 			die('View does not exists');  
 		}
 	}
+
+	/**
+	 * [redirect description] 
+	 * @param  [type] $route [description]
+	 * @return [type]        [description]
+	 */
+	public function redirect($route) {
+		header('Location: '.ROOTURL.'/'.$route);      
+		exit();  
+	} 
 
 }

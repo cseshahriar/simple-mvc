@@ -63,7 +63,7 @@
             <div class="col">
             <button type="submit" class="btn btn-success btn-block">Register</button>  
             </div>
-          </div>
+          </div> 
       </form>
   </div>
   <!-- /.form-box -->
@@ -71,11 +71,12 @@
 <!-- /.register-box -->
 
 <!-- jQuery 3 -->
-<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../../../assets/js/jquery-3.3.1.slim.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
-<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../../../assets/js/popper.min.js"></script>
+<script src="../../../assets/js/bootstrap.min.js"></script>
 <!-- iCheck -->
-<script src="../../plugins/iCheck/icheck.min.js"></script>
+<script src="../../../assets/js/icheck.min.js"></script> 
 <script>
   $(function () {
     $('input').iCheck({
