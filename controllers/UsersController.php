@@ -41,7 +41,7 @@ class UsersController  extends Controller
 			header("Location: /user/login");     
 		}   
 
-		$users = $this->userModel->users();   
+		$users = $this->userModel->users();    
 		$data = [
 			'title' => 'User List',
 			'users' => $users
@@ -143,7 +143,7 @@ class UsersController  extends Controller
 			];
 
 			// load view 
-			$this->view('backend/users/register', $data);     
+			$this->view('backend/users/register', $data);      
 		}
 	}
 
@@ -251,6 +251,7 @@ class UsersController  extends Controller
 		$_SESSION['user_id'] = $user->id;
 		$_SESSION['user_name'] = $user->name;
 		$_SESSION['user_email'] = $user->email; 
+		$_SESSION['user_photo'] = $user->photo;  
 
 		flash('login_success', 'Welcome, you are successfuly logged in.');   
 		$this->redirect('user/dashboard');                     

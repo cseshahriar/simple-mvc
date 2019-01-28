@@ -1,14 +1,14 @@
 <?php 
 
 // Routes 
-$routes = array(); 
+$routes = array();  
 
 // Default Routes
 $routes['home'] = "HomeController/index";  
 
 // User routes 
 $routes['user/dashboard'] = "UsersController/dashboard";          
-$routes['user/index'] = "UsersController/index";   
+$routes['user/index'] = "UsersController/index";    
 
 $routes['user/register'] = "UsersController/register";    
 $routes['user/login'] = "UsersController/login";      
