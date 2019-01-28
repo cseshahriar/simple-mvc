@@ -46,9 +46,19 @@
                   </td> 
                   <td><?= $user->created_at ?></td> 
                   <td>
-                    <a href="/user/edit/<?= $user->id ?>"><i class="fa fa-pencil-square"></i></a>
-                    <form action="/user/delete/<?= $user->id ?>" style="display: inline;margin: 0;padding: 0">
-                      <button type="submit" style="border:0;background:none"><i class="fa fa-trash"></i></button>    
+                    <!-- edit -->
+                    <form action="/user/edit" style="display: inline;margin: 0;padding: 0" method="post">
+                      <input type="hidden" name="id" value="<?= $user->id ?>"> 
+                      <button type="submit" style="border:0;background:none" onclick="return confirm('Are you sure want to edit it?');">
+                        <i class="fa fa-pencil-square"></i>   
+                      </button>     
+                    </form>    
+
+                    <!-- delete -->
+                    <form action="/user/delete" style="display: inline;margin: 0;padding: 0" method="post">    <input type="hidden" name="id" value="<?= $user->id ?>">
+                        <button type="submit" style="border:0;background:none" onclick="return confirm('Are you sure want to delete it?');"> 
+                          <i class="fa fa-trash"></i>  
+                        </button>     
                     </form>
                   </td>
                 </tr>

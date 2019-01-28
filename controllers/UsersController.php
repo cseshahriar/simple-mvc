@@ -154,11 +154,22 @@ class UsersController  extends Controller
 		} 
 	}
 
-	public function delete()  
+	/**
+	 * [delete description]
+	 * @return [type] [description]
+	 */
+	public function delete()   
 	{
 		if (!isLoggedIn()) {    
 			header("Location: /users/login");      
 		} 
+		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+			$id = $_POST['id']; 
+			$delete = $this->userModel->delete($id);
+			if ($delete) {
+				redirect('/user/index');
+			}
+		}  
 	}
 
 	/**
