@@ -50,3 +50,8 @@ function redirect($route)
 {
 	header("Location: ".ROOTURL.'/'.$route);  
 } 
+
+function asset($resource)
+{
+  return ROOTURL.'/assets/'.$resource;     
+}

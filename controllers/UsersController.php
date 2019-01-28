@@ -14,14 +14,36 @@ class UsersController  extends Controller
 		$this->userModel = new User();        
 	}
 
+	/**
+	 * [dashboard description]
+	 * @return [type] [description]
+	 */
+	public function dashboard()
+	{
+		if (!isLoggedIn()) {    
+			header("Location: /user/login");     
+		}    
+
+		$data = [
+			'title' => 'Dashboard'
+		];
+		$this->view('backend/dashboard', $data);   
+	}
+
+	/**
+	 * [index description]
+	 * @return [type] [description]
+	 */
 	public function index()
 	{ 
+
 		if (!isLoggedIn()) {    
 			header("Location: /user/login");     
 		}   
 
 		$users = $this->userModel->users();   
 		$data = [
+			'title' => 'User List',
 			'users' => $users
 		];  
 		$this->view('backend/users/index', $data);         
@@ -42,6 +64,7 @@ class UsersController  extends Controller
 
 			// init data 
 			$data = [ 
+				'title' => 'Register',
 				'name' => trim($_POST['name']),
 				'email' => trim($_POST['email']), 
 				'password' => trim($_POST['password']),
@@ -108,6 +131,7 @@ class UsersController  extends Controller
 		} else {  // if post not submit 
 			// init data
 			$data = [
+				'title' => 'Register',  
 				'name' => '',
 				'email' => '', 
 				'password' => '',
@@ -150,6 +174,7 @@ class UsersController  extends Controller
 
 			// init data 
 			$data = [
+				'title' => 'Login',
 				'email' => trim($_POST['email']), 
 				'password' => trim($_POST['password']),
 				'name_error' => '',
@@ -203,10 +228,11 @@ class UsersController  extends Controller
 		} else { 
 			// init data
 			$data = [
+				'title' => 'Login',
 				'email' => '', 
 				'password' => '',
 				'email_error' => '',
-				'password_error' => '',
+				'password_error' => '', 
 			];
 
 			// load view 
@@ -224,10 +250,10 @@ class UsersController  extends Controller
 		$data = [];
 		$_SESSION['user_id'] = $user->id;
 		$_SESSION['user_name'] = $user->name;
-		$_SESSION['user_email'] = $user->email;
+		$_SESSION['user_email'] = $user->email; 
 
 		flash('login_success', 'Welcome, you are successfuly logged in.');   
-		$this->redirect('user/index');                     
+		$this->redirect('user/dashboard');                     
 	}
 
 
@@ -238,6 +264,7 @@ class UsersController  extends Controller
 		}
 
 		$data = [
+			'title' => 'Logout',
 			'email' => '',
 			'password' => ''        
 		];   
@@ -256,7 +283,7 @@ class UsersController  extends Controller
 		if (isset($_SESSION['user_id'])) {
 			return true;
 		} else {
-			return false;   
+			return false;    
 		}
 	}   
 }
