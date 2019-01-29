@@ -147,12 +147,27 @@ class UsersController  extends Controller
 		}
 	}
 
-	public function update()
+
+	/**
+	 * [update description]
+	 * @return [type] [description]  
+	 */
+	public function edit()  
 	{
-		if (!isLoggedIn()) {    
+		
+		if (!isLoggedIn()) {     
 			header("Location: /user/login");      
-		} 
-	}
+		}  
+		
+		$id = $_POST['id'];
+		$userData = $this->userModel->user($id); 
+		$data = [
+			'user' => $userData 
+		];
+		
+		$this->view('backend/users/edit', $data);        
+	
+	} 
 
 	/**
 	 * [delete description]
@@ -171,6 +186,8 @@ class UsersController  extends Controller
 			}
 		}  
 	}
+
+
 
 	/**
  	* [login description]

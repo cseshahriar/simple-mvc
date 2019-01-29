@@ -88,6 +88,29 @@ class User extends Database
 		return $rows;  
 	}
 
+	public function user($id) 
+	{
+		$this->db->query("SELECT * FROM users WHERE id=$id"); 
+		$rows = $this->db->get();  
+		return $rows;   
+	} 
+
+	public function update($id) 
+	{
+		$this->db->query('INSERT INTO users(name,email,password) VALUES(:name,:email,:password)');
+		// Bind values
+		$this->db->bind(':name', $data['name']);
+		$this->db->bind(':email', $data['email']);
+		$this->db->bind(':password', $data['password']);
+		// Execute
+		if($this->db->execute()) {
+			return true;
+		} else {
+			return false;  
+		} 
+
+	}
+
 	public function delete($id) 
 	{
 		$this->db->query('DELETE FROM users WHERE id=:id');

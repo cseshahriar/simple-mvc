@@ -47,10 +47,10 @@
                   <td><?= $user->created_at ?></td> 
                   <td>
                     <!-- edit -->
-                    <form action="/user/edit" style="display: inline;margin: 0;padding: 0" method="post">
-                      <input type="hidden" name="id" value="<?= $user->id ?>"> 
+                    <form action="/user/edit" style="display: inline;margin: 0;padding: 0" method="post"> 
+                      <input type="hidden" name="id" value="<?= $user->id ?>">   
                       <button type="submit" style="border:0;background:none" onclick="return confirm('Are you sure want to edit it?');">
-                        <i class="fa fa-pencil-square"></i>   
+                        <i class="fa fa-pencil-square"></i>    
                       </button>     
                     </form>    
 
